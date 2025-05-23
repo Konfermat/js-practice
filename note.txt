@@ -1,0 +1,6 @@
+Today's topic is JavaScript
+resourses:
+https://www.w3schools.com/js/DEFAULT.asp
+https://developer.mozilla.org/en-US/
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting
+https://learn.javascript.ru/

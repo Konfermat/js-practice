@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6</title>
+    <script>
+// «апросить у пользовател€ сумму покупки и вывести сумму
+// к оплате со скидкой: от 200 до 300 Ц скидка будет 3%, от 300
+// до 500 Ц 5%, от 500 и выше Ц 7%. 
+      let purchase = parseInt(prompt("¬ведите сумму покупки: "));
+      if (purchase >= 200 && purchase <= 300) {
+        alert("—умма покупки со скидкой в 3% будет: " + purchase - (purchase * 0.03));
+      } else if (purchase > 300 && purchase <= 500) {
+        alert("—умма покупки со скидкой в 5% будет: " + purchase - (purchase * 0.05));
+      } else if (purchase > 500) {
+        alert("—умма покупки со скидкой в 7% будет: " + purchase - (purchase * 0.07));
+        else {
+          alert("Ќеизвестна€ ошибка.");
+        }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
