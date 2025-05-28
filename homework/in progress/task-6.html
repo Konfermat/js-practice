@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6</title>
+    <script>
+// �������� ��������� �����. ������������ ������ ���������� USD, ��������, � ����� ������ ����� ���������: EUR,
+// UAN ���AZN, � �������� � ����� ��������������� �����
+      let monay = prompt("������� ����� �������� ��� �����������: ");
+      let currency = prompt("�������� ������ ��� ����������� � ������� � �������� � ������� ��������� � ��� ������(EUR, UAN, AZN): ");
+      switch (true) {
+        case (currency == "EUR"):
+          alert((monay * 0.88) + " EUR");
+          break;
+        case (currency == "UAN"):
+          alert((monay * 7.2) + " UAN");
+          break;
+        case (currency == "AZN"):
+          alert((monay * 1.7) + " AZN");
+          break;
+        default:
+          alert("������. ������ ������� �� ��������� ��� ���� ����.");
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
