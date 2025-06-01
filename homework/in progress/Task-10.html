@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6</title>
+    <script>
+        // Запросить дату (день, месяц, год) и вывести следующую
+        // за ней дату. Учтите возможность перехода на следующий
+        // месяц, год, а также високосный год. 
+        let day = parseInt(prompt("Введите день: "));
+        let month = parseInt(prompt("Введите номер месяца: "));
+        let year = parseInt(prompt("Введите год: "));
+        let feb_check;
+        console.log(day + "." + month + "." + year);
+
+        switch (true) {
+            case ((year > 0) && (month > 0 && month <= 12) && (day > 0 && day <= 31)):
+                // leap check
+                if ((year % 400 == 0 || year % 4 == 0) && !(year & 100 == 0)) {
+                    feb_check = 29;
+                } else {
+                    feb_check = 28;
+                }
+                // month cases
+                switch (true) {
+                    // february case
+                    case (month == 2):
+                        if (day < feb_check) {
+                            day++;
+                            alert(day + "." + month + "." + year);
+                            break;
+                        } else if (day == feb_check) {
+                            day = 1;
+                            month++;
+                            alert(day + "." + month + "." + year);
+                            break;
+                        } else {
+                            alert("Ошибка ввода данных. День, месяц или год ввдены неправильно.");
+                            break;
+                        }
+
+                    // 30 days case
+                    case (month == 4 || month == 6 || month == 9 || month == 11):
+                        if (day < 30) {
+                            day++;
+                            alert(day + "." + month + "." + year);
+                            break;
+                        } else if (day == 30) {
+                            day = 1;
+                            month++;
+                            alert(day + "." + month + "." + year);
+                            break;
+                        } else {
+                            alert("Ошибка ввода данных. День, месяц или год ввдены неправильно.");
+                            break;
+                        }
+                    // 31 case
+                    case ((month == 1 || month == 2 || month == 3 || month == 5 ||
+                        month == 7 || month == 8 || month == 10 || month == 12)):
+                        if (day == 31 && month == 12) {
+                            day = 1;
+                            month = 1;
+                            year++;
+                            alert(day + "." + month + "." + year);
+                            break;
+                        } else if (day == 31) {
+                            day = 1;
+                            month++;
+                            alert(day + "." + month + "." + year);
+                            break;
+                        } else if (day < 31){
+                            day++;
+                            alert(day + "." + month + "." + year);
+                            break;
+                        } else {
+                            alert("Ошибка ввода данных. День, месяц или год ввдены неправильно.");
+                            break;
+                        }
+                }
+                break;
+            default:
+                alert("Ошибка ввода данных. День, месяц или год ввдены неправильно.");
+                break;
+        }
+        console.log(day + "." + month + "." + year);
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
