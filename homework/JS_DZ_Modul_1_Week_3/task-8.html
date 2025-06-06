@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 8</title>
+  <script>
+    //     Зациклить вывод дней недели таким образом: «День недели.
+    // Хотите увидеть следующий день?» и так до тех пор, пока
+    // пользователь нажимает OK. 
+    let input;
+    let weekDays = 1;
+     do {
+      switch (weekDays) {
+        case 1:
+          input = prompt("День недели: " + "Понедельник. " + "Чтобы продолжить введите любое число или букву: ");
+          break;
+        case 2:
+          input = prompt("День недели: " + "Вторник. " + "Чтобы продолжить введите любое число или букву: ");
+          break;
+        case 3:
+          input = prompt("День недели: " + "Среда. " + "Чтобы продолжить введите любое число или букву: ");
+          break;
+        case 4:
+          input = prompt("День недели: " + "Четверг. " + "Чтобы продолжить введите любое число или букву: ");
+          break;
+        case 5:
+          input = prompt("День недели: " + "Пятница. " + "Чтобы продолжить введите любое число или букву: ");
+          break;
+        case 6:
+          input = prompt("День недели: " + "Суббота. " + "Чтобы продолжить введите любое число или букву: ");
+          break;
+        case 7:
+          input = prompt("День недели: " + "Воскресенье. " + "Чтобы продолжить введите любое число или букву: ");
+          break;
+      }
+      if (weekDays == 7) {
+        weekDays = 1;
+      } else {
+        weekDays++;
+      }
+    } while (input != "");
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

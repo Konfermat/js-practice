@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 6</title>
+  <script>
+    //     Зациклить калькулятор. Запросить у пользователя 2 числа
+    // и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример.
+    //  И так до тех пор, пока пользователь не откажется.
+    let check = "да";
+    let num1;
+    let num2;
+    let operand;
+    let result;
+    do {
+      check = "нет";
+      num1 = parseInt(prompt("Введите первое число: "));
+      num2 = parseInt(prompt("Введите второе число: "));
+      operand = prompt("Введите математический оператор на выбор(/,%,*,+,-): ");
+      switch (operand) {
+        case "/":
+          result = num1 / num2;
+          break;
+        case "%":
+          result = num1 % num2;
+          break;
+        case "*":
+          result = num1 * num2;
+          break;
+        case "+":
+          result = num1 + num2;
+          break;
+        case "-":
+          result = num1 - num2;
+          break;
+      }
+      check = prompt("Результат: " + (result) + " Хотите продолжить?(да/нет): ");
+    } while (check == "да");
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

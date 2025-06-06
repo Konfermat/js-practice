@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5</title>
+  <script>
+    //     Запросить у пользователя 10 чисел и подсчитать, сколько
+    // он ввел положительных, отрицательных и нулей. При этом
+    // также посчитать, сколько четных и нечетных. Вывести
+    // статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
+    let itr = 0;
+    let input;
+    let cntPositive = 0;
+    let cntNegative = 0;
+    let cntZero = 0;
+    let cntEven = 0;
+    let cntOdd = 0;
+    do {
+      input = parseInt(prompt("Введите число: "));
+      if (input == 0) {
+        cntZero++;
+        cntEven++;
+      }
+      
+      if (input > 0) {
+        cntPositive++;
+      } else if (input < 0) {
+        cntNegative++;
+      }
+      
+      if (input % 2 == 0) {
+        cntEven++;
+      } else if (input % 2 != 0) {
+        cntOdd++;
+      }
+      itr++;
+      
+    } while (itr < 10);
+    console.log("Статистика по введенным десяти числам числам");
+    console.log("Количество позитивных чисел = " + cntPositive);
+    console.log("Количество негативных чисел = " + cntNegative);
+    console.log("Количество нулей = " + cntZero);
+    console.log("Количество четных чисел = " + cntEven);
+    console.log("Количество не четных чисел = " + cntOdd);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
