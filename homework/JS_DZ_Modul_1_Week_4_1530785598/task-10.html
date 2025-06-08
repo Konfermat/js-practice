@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 10</title>
+  <script>
+    //     Написатьфункцию, которая считает разницу между датами.
+    // Функция принимает 6 параметров, которые описывают 2
+    // даты, и возвращает результат в виде строки «чч:мм:сс». При
+    // выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды,
+    // узнайте разницу в секундах, а потом разницу переведите
+    // обратно в «чч:мм:сс»
+    
+    // console.log(dateDivision(2, 12, 20, 2, 12, 32));
+    // console.log(dateDivision(23, 14, 20, 7, 52, 18));
+    // console.log(dateDivision(23, 14, 20, 24, 52, 18));
+    function dateDivision(hours1, minutes1, seconds1, hours2, minutes2, seconds2) {
+
+      function toSeconds(hours, minutes, seconds) {
+        let result = hours * 60; // to minutes
+        result += minutes; // plus minutes
+        result *= 60; // to seconds
+        return result + seconds; // plus seconds that left
+      }
+      function ifZeroNeeded(value) {
+        if (value.toString().length == 1) {
+          return "0" + (value);
+        } else {
+          return value;
+        }
+      }
+      function fromSecToHours(value) {
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 0;
+        if (parseInt(value / 60) > 0) {
+          minutes = parseInt(value / 60); // calc all minutes
+          seconds = value - (minutes * 60); // set seconds that left
+          if (parseInt(minutes / 60) > 0) {
+            hours = parseInt(minutes / 60); // calc hours
+            minutes -= hours * 60; // calc minutes that left
+            return (`${ifZeroNeeded(hours)}.${ifZeroNeeded(minutes)}.${ifZeroNeeded(seconds)}`);
+          } else {
+            return (`00.${ifZeroNeeded(minutes)}.${ifZeroNeeded(seconds)}`);
+          }
+        } else {
+          return (`00.00.${ifZeroNeeded(value)}`);
+        }
+      }
+
+      let total1 = toSeconds(hours1, minutes1, seconds1);
+      let total2 = toSeconds(hours2, minutes2, seconds2);
+      let result = Math.abs(total1 - total2);
+      return fromSecToHours(result);
+    }
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
