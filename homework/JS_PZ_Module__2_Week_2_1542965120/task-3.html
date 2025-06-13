@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3</title>
+  <script>
+
+    // Создать массив фруктов и отсортировать его по алфавиту.
+    // Написать следующие функции.
+
+    // 1. Вывод на экран с помощью document.write() в виде списка
+    // (с помощью тегов ul и li).
+
+    // 2. Поиск фрукта в массиве. Функция принимает название
+    // фрукта и возвращает индекс найденного элемента или -1,
+    // если не найден. Поиск должен быть нерегистрозависимым. 
+
+    let fruits = ["Mango", "Banana", "Orange", "Pear", "Peach", "Apple"];
+    fruits.sort();
+    
+    printArrayList(fruits);
+    console.log(fruitIndex("Mango"));
+    console.log(fruitIndex("OranGe"));
+    console.log(fruitIndex("Dragon Fruit"));
+    
+    
+    // task1
+    function printArrayList(array) {
+      for (let i = 0; i < array.length; i++) {
+        document.write(`<li>${fruits[i]}</li>`);
+      }
+    }
+    // task2
+    function fruitIndex(name) {
+      for (let i = 0; i < fruits.length; i++) {
+        if (fruits[i].toString().toLowerCase() == name.toString().toLowerCase()) {
+          return i;
+          break;
+        }
+      }
+      return -1;
+    }
+
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

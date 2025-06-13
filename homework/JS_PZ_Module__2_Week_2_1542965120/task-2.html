@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2</title>
+  <script>
+    window.onload = function () {
+      // 1. Функция принимает 2 массива и возвращает новый массив, 
+      // в котором собраны все элементы из двух массивов
+      // без повторений.
+
+      // 2. Функция принимает 2 массива и возвращает новый массив,
+      // в котором собраны общие элементы(то есть элементы,
+      // которые встречаются и в первом и во втором массивах)
+      // без повторений.
+
+      // 3. Функция принимает 2 массива и возвращает новый массив, 
+      // в котором собраны все элементы из первого массива,
+      // которых нет во втором массиве.
+
+      // printArray(generateArray(10));
+
+      // task1
+      let a = generateArray(5);
+      let b = generateArray(5);
+      printArray(a, "a");
+      printArray(b, "b");
+      printArray(twoArraysNoDubs(a, b), "task1");
+
+      // task2
+      let a2 = generateArray(10);
+      let b2 = generateArray(10);
+      printArray(a2, "a2");
+      printArray(b2, "b2");
+      printArray(arrayСouples(a2, b2), "task2");
+
+      // task3
+      let a3 = [1, 5, 6, 7];
+      let b3 = [1, 2, 3, 4];
+      printArray(a3, "a3");
+      printArray(b3, "b3");
+      printArray(firstArrayWithoutSecondInclusion(a3, b3), "task3");
+
+      function generateArray(size) {
+        const array = [];
+
+        for (let i = 0; i < size; i++) {
+          // array[i] = Math.floor(Math.random() * 100);                    
+          // array[i] = Math.round(Math.random() * 100);                    
+          array[i] = Math.ceil(Math.random() * 100);
+        }
+        return array;
+      }
+
+      function printArray(array, name) {
+        document.getElementById(name).innerText = array.toString();
+      }
+    }
+
+    function twoArraysNoDubs(array1, array2) {
+      let array3 = array1.concat(array2);
+      let result = [];
+      for (let i = 0; i < array3.length; i++) {
+        if (!result.includes(array3[i])) {
+          result.push(array3[i]);
+        }
+      }
+      return result;
+    }
+
+    function arrayСouples(array1, array2) {
+      array3 = [];
+      for (let i = 0; i < array1.length; i++) {
+        for (let j = 0; j < array2.length; j++) {
+          if (array1[i] == array2[j] && !array3.includes(array1[i])) {
+            array3.push(array1[i]);
+          }
+        }
+      }
+      return array3;
+    }
+
+    function firstArrayWithoutSecondInclusion(array1, array2) {
+      let array3 = [];
+      for (let i = 0; i < array1.length; i++) {
+        if (!array2.includes(array1[i])) {
+          array3.push(array1[i]);
+        }
+      }
+      return array3;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Task 2</h1>
+
+  <h3>Problem 1</h3>
+  <p id="a"></p>
+  <p id="b"></p>
+  <p id="task1"></p>
+
+  <h3>Problem 2</h3>
+  <p id="a2"></p>
+  <p id="b2"></p>
+  <p id="task2"></p>
+
+  <h3>Problem 3</h3>
+  <p id="a3"></p>
+  <p id="b3"></p>
+  <p id="task3"></p>
+</body>
+
+</html>
