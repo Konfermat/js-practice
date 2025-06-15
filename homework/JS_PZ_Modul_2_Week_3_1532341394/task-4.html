@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <script>
+        //         Написать функцию для проверки спама в переданной
+        // строке. Функция возвращает true, если строка содержит
+        // спам. Спамом считать следующие слова:
+        // 100% бесплатно, увеличение продаж, только сегодня, не удаляйте, xxx.
+        // Функция должна быть нечувствительна к регистру.
+        console.log(spamCheck("ДВА ЯДРА! ДВА ГИГА! ИГРОВАЯ ВИДЕОКАРТА! не удаляйте"));
+        console.log(spamCheck("ДВА ЯДРА! ДВА ГИГА! ИГРОВАЯ ВИДЕОКАРТА! не УДАЛЯЙТЕ"));
+        console.log(spamCheck("ДВА ЯДРА! ДВА ГИГА! ИГРОВАЯ ВИДЕОКАРТА!"));
+        console.log(spamCheck("только сегодня"));
+        function spamCheck(string) {
+            let result = false;
+            let redFlag = ["100% бесплатно", "увеличение продаж", "только сегодня", "не удаляйте", "xxx"];
+            for (let i = 0; i <= string.length; i++) {
+                if (string.toLowerCase().includes(redFlag[i])) {
+                    result = true;
+                    return result;
+                }
+            }
+            return result;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

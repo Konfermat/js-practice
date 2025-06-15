@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+    <style>
+        html {
+            background-color: rgb(41, 41, 41);
+        }
+    </style>
+    <script>
+        //     Написать функцию, которая считает среднюю длину слова
+        // в предложении.
+
+        let word = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit earum, ab voluptate ex ullam maxime.";
+        console.log(averageLength(word));
+
+        function averageLength(string) {
+            let temp = deleteSigns(string).split(" ");
+            let amount = temp.length;
+            let sum = 0;
+            for (let i = 0; i < temp.length; i++) {
+                sum += temp[i].length;
+            }
+            return (sum / amount).toFixed(2);
+        }
+
+        function deleteSigns(string) {
+            let tmp = string.split("");
+            let redFlag = "!@#$%^&*()_+=-|\/.,`".split("");
+            for (let i = 0; i < redFlag.length; i++) {
+                while (tmp.includes(redFlag[i])) {
+                    delete tmp[tmp.indexOf(redFlag[i])];
+                }
+            }
+            return tmp.join("");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

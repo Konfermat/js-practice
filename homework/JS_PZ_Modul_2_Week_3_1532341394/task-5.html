@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <script>
+        // . Написать функцию сокращения строки. Функция принимает строку и ее максимальную длину. Если длина строки
+        // больше, чем максимальная, то необходимо отбросить
+        // лишние символы, добавив вместо них троеточие.
+        // Например: truncate("Hello World", 8) должна вернуть Hello...
+        console.log(truncate("Hello World!", 8));
+        console.log(truncate("My name is Pedro!", 13));
+        console.log(truncate("My name is Pedro!", 25));
+
+        function truncate(string, size) {
+            let result;
+            if (string.length > size) {
+                result = string.slice(0, size);
+                result = result.slice(0, -3) + "...";
+                // result = string.slice((string.length - 4), string.length);
+                return result;
+            } else {
+                return string;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

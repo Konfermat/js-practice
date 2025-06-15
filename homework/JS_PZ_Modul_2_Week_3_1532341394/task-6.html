@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+    <script>
+        // Написать функцию, которая проверяет, является ли переданная строка палиндромом.
+        console.log(isPalindrome("sdf3fdsa"));
+        console.log(isPalindrome("asdffds"));
+        console.log(isPalindrome(1234321));
+        function isPalindrome(input) {
+            let i = 0;
+            let j = input.length - 1;
+            do {
+                if (input[i] != input[j]) {
+                    return false;
+                }
+                i++;
+                j--;
+            } while (i < Math.floor(input.length / 2));
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
