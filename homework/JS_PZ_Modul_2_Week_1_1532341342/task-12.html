@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+    <style>
+        html {
+            background-color: rgb(41, 41, 41);
+        }
+    </style>
+    <script>
+        // Функция для проверки, находится ли точка внутри прямоугольника. 
+        // Она принимает объект-прямоугольник и
+        // координаты точки
+
+
+        const rectangle = {
+            leftTopX: 2,
+            leftTopY: 3,
+            rightButtomX: 6,
+            rightButtomY: 1,
+        }
+
+        function isInRectangle(object, x, y) {
+            let flag = false;
+            if (
+                object.leftTopX < x &&
+                object.leftTopY > y &&
+                object.rightButtomX > x &&
+                object.rightButtomY < y
+            ) {flag = true}
+            return flag;
+        }
+
+        console.log(rectangle);
+        console.log(isInRectangle(rectangle, 5, 12));
+        console.log(isInRectangle(rectangle, 3, 2));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

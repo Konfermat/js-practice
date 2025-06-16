@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+    <style>
+        html {
+            background-color: rgb(41, 41, 41);
+        }
+    </style>
+    <script>
+        // Функция смещения прямоугольника и по оси X и по
+        // оси Y. Она принимает объект-прямоугольник и два значения:
+        //  сдвиг по оси X и сдвиг по оси Y.
+
+        
+        const rectangle = {
+            leftTopX: 2,
+            leftTopY: 3,
+            rightButtomX: 6,
+            rightButtomY: 1,
+        }
+        
+        function moveByXY(object, x, y) {
+            object.leftTopX += x;
+            object.rightButtomX += x;
+            object.leftTopY += y;
+            object.rightButtomY += y;
+        }
+        console.log(rectangle);
+        moveByXY(rectangle, 5, 5);
+        console.log(rectangle);
+
+        </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
