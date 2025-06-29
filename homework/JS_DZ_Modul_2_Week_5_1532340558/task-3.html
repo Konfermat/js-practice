@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+  <script>
+
+    // Реализовать класс Employee, описывающий работника, и создать массив работников банка.
+    // Реализовать класс EmpTable для генерации html кода таблицы
+    // со списком работников банка. Массив работников необходимо
+    // передавать через конструктор, а получать html код с помощью
+    // метода getHtml().
+    // Создать объект класса EmpTable и вывести на экран результат
+    // работы метода getHtml().
+
+    class Employee {
+      constructor(name, age, gender, role) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.role = role;
+      }
+
+      getEmployee() {
+        let result = [this.name, this.age, this.gender, this.role];
+        return result;
+      }
+    }
+
+    class EmpTable {
+      constructor(employee) {
+        this.employee = employee;
+        this.tableHeader = ["Name", "Age", "Gender", "Role"];
+      }
+
+      getHtml() {
+        let result = "<table>";
+
+        result += "<tr>";
+        for (let i = 0; i < this.tableHeader.length; i++) {
+          result += `<th>${this.tableHeader[i]}</th>`;
+        }
+        result += "</tr>";
+
+        for (let i = 0; i < this.employee.length; i++) {
+          result += "<tr>";
+          for (let j = 0; j < this.employee[i].length; j++) {
+            result += `<td>${this.employee[i][j]}</td>`;
+          }
+          result += "</tr>";
+        }
+
+        result += "</table>";
+        return result;
+      }
+    }
+
+    let emp1 = new Employee("Lora", 32, "female", "bartender");
+    let emp2 = new Employee("Ipsum", 30, "male", "plumer");
+    let emp3 = new Employee("Margarita", 21, "female", "writer");
+    let emp4 = new Employee("Anna", 41, "female", "programmer");
+    let emp5 = new Employee("Mark", 31, "male", "manager");
+
+    let employees = [
+      emp1.getEmployee(),
+      emp2.getEmployee(),
+      emp3.getEmployee(),
+      emp4.getEmployee(),
+      emp5.getEmployee()
+    ];
+
+    let table = new EmpTable(employees);
+
+
+    document.write(table.getHtml());
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /><-->
+    <title>Task 2</title>
+    <style>
+
+        .hide1 {
+            display: none;
+        }
+
+        .hide2 {
+            display: none;
+        }
+
+        .hide3 {
+            display: none;
+        }
+
+        #elem1:hover {
+            font-weight: bold;
+        }
+
+        #elem2:hover {
+            font-weight: bold;
+        }
+
+        #elem3:hover {
+            font-weight: bold;
+        }
+
+        #elem4:hover {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.getElementById("elem1").onclick = function() {
+                document.getElementById("hide1").classList.toggle("hide1");
+            };
+            document.getElementById("elem2").onclick = function() {
+                document.getElementById("hide2").classList.toggle("hide2");
+            };
+            document.getElementById("elem3").onclick = function() {
+                document.getElementById("hide3").classList.toggle("hide3");
+            };
+        };
+    </script>
+
+</head>
+
+<body>
+    <ul id="table">
+        <li>
+            <div id="elem1">This PC</div>
+            <ul id="hide1">
+                <li>
+                    <div id="elem2">Local Disk (C:)</div>
+                    <ul id="hide2">
+                        <li>Program Files</li>
+                        <li>Users</li>
+                        <li>Windows</li>
+                    </ul>
+                </li>
+                <li>
+                    <div id="elem3">Local Disk (D:)</div>
+                    <ul id="hide3">
+                        <li>New Folder 1</li>
+                        <li>New Folder 2</li>
+                        <li>New Folder 3</li>
+                    </ul>
+                </li>
+                <li>
+                    <div id="elem4">Local Disk (E:)</div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
