@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <style>
+        #intOnly {
+            width: 2.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function checkPhoneKey(key) {
+            if(!((key >= '0' && key <= '9') || key == '+' || key == '(' || key == ')' || key == '-')) {
+                event.preventDefault();
+            }
+        }
+    </script>
+    <input type="number" id="intOnly" onkeydown="return checkPhoneKey(event.key)" placeholder="00" type="tel">
+</body>
+
+</html>
