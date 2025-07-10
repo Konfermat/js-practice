@@ -1,0 +1,6 @@
+https://www.weatherapi.com/
+API key:
+342a77058ed8431aa49113635251007
+
+загрузить как есть
+на гит

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wether report</title>
+    <style></style>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <!-- <script src="../../jquery-ui-1.14.1.custom/jquery-ui.min.js"></script> -->
+    <script>
+        $(document).ready(function () {
+            // $("button").on("click", function () {
+            //     // $("p").text("lorem ipsum");
+            //     console.log($("p").text());
+            //     const inputVal = $("#name").val();
+            //     console.log(inputVal);
+            //     const type = $("#name").attr("type");
+            //     console.log(type);
+
+            //     // $("p:first").append("Sample Text");
+            //     // $("p:first").append($("<h1></h1>").text("Header 1"));
+            //     $("p:first").append($("<h1>").text("Header 1").addClass("text-red backgound-grey"));
+
+            // });
+            $("#button").on("click", function () {
+                $.ajax({
+                    url: 'http://api.weatherapi.com/v1/current.json?key=342a77058ed8431aa49113635251007&q=Novosibirsk&aqi=no',         /* Куда отправить запрос */
+                    method: 'get',             /* Метод запроса (post или get) */
+                    dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+                    // data: { text: 'Текст' },     /* Данные передаваемые в массиве */
+                    success: function (data) {   /* функция которая будет выполнена после успешного запроса.  */
+                        console.log(data);
+                        $("#city").append(data.location.name);
+                        $("#country").append(data.location.country);
+                        $("#lastWetherReport").append(data.current.last_updated);
+                        $("#celcium").append(data.current.temp_c);
+                        // let a = data.current.condition.icon;
+                        // console.log(a);
+                        $("#icon").append(`<img src='https:${data.current.condition.icon}' alt='no image'>`);
+                        $("#iconDescribtion").append(data.current.condition.text);
+                        $("#windSpeed").append(data.current.wind_kph);
+                        $("#weatherAmount").append(data.current.precip_mm);
+                        $("#presureMilBar").append(data.current.pressure_mb);
+                    }
+                });
+                $.ajax({
+                    url: 'http://api.weatherapi.com/v1/forecast.json?key=342a77058ed8431aa49113635251007&q=Novosibirsk&days=3&aqi=no&alerts=no',         /* Куда отправить запрос */
+                    method: 'get',             /* Метод запроса (post или get) */
+                    dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+                    // data: { text: 'Текст' },     /* Данные передаваемые в массиве */
+                    success: function (data) {   /* функция которая будет выполнена после успешного запроса.  */
+                        // $("#dayName").append();
+                        function addSection(arrayData) {
+                            // asfd
+                        }
+                        for (let i = 0; i < data.forecast.forecastday.length; i++) {
+                            console.log(data.forecast.forecastday[i]);
+                        }
+
+                    }
+                });
+
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <section>
+        <input type="button" value="start" id="button"><br>
+        название города
+        <div id="city"></div>
+        название страны
+        <div id="country"></div>
+        время последнего обновления погоды
+        <div id="lastWetherReport"></div>
+        температуру в градусах Цельсия
+        <div id="celcium"></div>
+        иконку
+        <div id="icon"></div>
+        текстовое описание иконки
+        <div id="iconDescribtion"></div>
+        скорость ветра в км/час
+        <div id="windSpeed"></div>
+        количество осадков в милиметрах
+        <div id="weatherAmount"></div>
+        давление в миллибарах
+        <div id="presureMilBar"></div>
+        <br>
+    </section>
+    <section id="sec2">
+        название дня недели
+        <div id="dayName"></div>
+        сегодняшняя дата
+        <div id="todayData"></div>
+        иконка
+        <div id="icon"></div>
+        среднее значение температуры Цельсия
+        <div id="averageCelcium"></div>
+    </section>
+    
+</body>
+
+</html>
