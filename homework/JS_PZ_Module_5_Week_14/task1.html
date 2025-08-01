@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <style>
+        body {
+            font-family: Times New Roman, serif;
+            background: #fff;
+        }
+
+        .container {
+            background: #fcf4ec;
+            width: 400px;
+            margin: 40px auto;
+            padding: 30px 30px 20px 30px;
+            border-radius: 4px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 8px 10px;
+            margin-bottom: 18px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 16px;
+            background: #fff;
+        }
+
+        input[type="checkbox"] {
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px 0;
+            background: #e5e5e5;
+            border: none;
+            border-radius: 4px;
+            font-size: 20px;
+            color: #333;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d5d5d5;
+        }
+
+        a {
+            color: #3a2fc7;
+            font-size: 20px;
+            text-decoration: underline;
+            margin: 15px 0 0 60%;
+            display: inline-block;
+
+        }
+
+        #greeting {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <label for="yourName">Your login:</label>
+            <input type="text" name="yourName" id="yourName" required />
+        </div>
+        <div>
+            <label for="yourPass">Your password:</label>
+            <input type="password" name="yourPass" id="yourPass" required />
+        </div>
+        <div>
+            <label>
+                Remember me
+                <input type="checkbox" name="remember" id="remember" />
+            </label>
+        </div>
+        <div>
+            <button type="button" id="signInBtn">Sign In</button>
+        </div>
+        <div>
+            <a href="https://www.boredbutton.com/random">Forgot password?</a>
+        </div>
+        <div id="greeting" style="margin-top:20px; font-size:18px;"></div>
+    </div>
+    <script>
+        document.getElementById('signInBtn').onclick = function () {
+            const name = document.getElementById('yourName').value;
+            const remember = document.getElementById('remember').checked;
+            const greeting = document.getElementById('greeting');
+            greeting.textContent = `Привет, ${name}! Я тебя ${remember ? 'запомнил' : 'не запомнил'}.`;
+        };
+    </script>
+</body>
+
+</html>
